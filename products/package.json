@@ -1,0 +1,17 @@
+{
+  "name": "products",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./node_modules/webpack-cli/bin/cli.js serve --mode development",
+    "build": "node ./node_modules/webpack/bin/webpack.js --mode production"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.6.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.8",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
+  }
+}
