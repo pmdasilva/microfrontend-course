@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -24,8 +25,14 @@ module.exports = {
             name: 'cart',
             filename: 'remoteEntry.js',
             exposes: {
-                './CartShow': './src/index.js'
-            }
+                './CartShow': './src/bootstrap'
+            },
+            shared: {
+                '@faker-js/faker': {
+                    // Aqui queremos que carregue esta dependencia apenas uma vez. De varias.
+                    singleton: true,
+                },
+            },
         })
     ]
 };

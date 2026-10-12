@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'main.js',
@@ -24,8 +25,13 @@ module.exports = {
             name: 'products',
             filename: 'remoteEntry.js',
             exposes: {
-                './ProductsIndex': './src/index.js'
-            }
+                './ProductsIndex': './src/bootstrap'
+            },
+            shared: {
+                '@faker-js/faker': {
+                    singleton: true,
+                },
+            },
         })
     ]
 };

@@ -23,6 +23,11 @@ module.exports = {
                 products: 'products@http://localhost:8081/remoteEntry.js',
                 cart: 'cart@http://localhost:8082/remoteEntry.js'
             },
+            shared: {
+                '@faker-js/faker': {
+                    singleton: true,
+                },
+            },
         })
     ],
 };
