@@ -27,6 +27,12 @@ module.exports = {
                 '@faker-js/faker': {
                     singleton: true,
                 },
+                react: {
+                    singleton: true,
+                },
+                react-dom: {
+                    singleton: true,
+                },
             },
         })
     ],
